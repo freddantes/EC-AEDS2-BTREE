@@ -85,6 +85,32 @@ int main() {
 					}
 				}
 			break;
+			case 3:
+				if(p == NULL)
+					printf("Arvore B vazia!\n");
+				else {
+					printf("Informe o valor do CPF para remover: ");
+					scanf("%d", &valor);
+
+					r.key = valor;
+					Pesquisa(p, &r);
+
+					if(!(r.key == -1)) {
+						c.cpf = valor;
+						aux = FALSE;
+
+						readFileClientes(r, &c, &aux);
+
+						if(aux) {
+							printf("Cliente: %s\n", c.nome);
+							printf("Idade: %d\n", c.idade);
+							printf("CPF: %d\n", c.cpf);
+						} else {
+							printf("O cpf (%d) nao foi encontrado na lista de clientes!\n", c.cpf);
+						}
+					}
+				}
+			break;
 			case 0:
 				printf("Programa finalizado!\n");
 				return EXIT_SUCCESS;
