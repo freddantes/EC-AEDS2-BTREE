@@ -113,7 +113,6 @@ int main() {
 			break;
 			case 0:
 				printf("Programa finalizado!\n");
-				return EXIT_SUCCESS;
 			default:
 				printf("Opção inválida!\n");
 		}
